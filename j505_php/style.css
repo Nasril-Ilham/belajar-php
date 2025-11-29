@@ -1,0 +1,30 @@
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid black;
+}
+
+th, td{
+    text-align: center;
+    pad: 16px;
+}
+
+th {
+    border-bottom: 1px solid black;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+tr:nth-child(even){
+    background-color: #9b3f3f;
+}
+
