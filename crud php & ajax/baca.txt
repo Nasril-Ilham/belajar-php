@@ -1,0 +1,122 @@
+
+
+// DI FOLDER INI TERDIRI DARI:
+1. INDEX : untuk memunculkan data dari data.php dan menambhkan data , data.php untuk menampilkan data dari db yang conect to data.php
+2. KONEKSI : ada 2
+    a. koneksi.php : koneksi biasa tanpa apapun hanya untuk menghubungkan dengan database
+    b. koneksi_ajax.php : koneksi dengan menggunakan jquery atau ajax 
+3. proses.php : logika di mana tidak menggunakan jquery hanya php biasa saja ,
+   update.php ,Create.php dan index_awal.no.ajax.php untuk index awalnya
+4.auth_ajax.php : untuk autentification
+5.csrf.php : ?
+6. hapus_data.php : berisi logika untuk menghapus data
+7. data.php menjadi tulang punggung di sini karna mengarahkan ke setiap file logic
+
+// jquery
+
+jQuery adalah jembatan utama
+yang menghubungkan tampilan (HTML) dengan semua logika back-end (file PHP logik lainnya).
+
+File PHP lainnya (seperti form_action.php, get_data.php, hapus_data.php) hanya berfungsi 
+sebagai API endpoint (titik akhir layanan) yang merespons permintaan yang dikirim oleh JQuery.
+
+// fetch API
+
+
+* koneksi ke db
+
+include = "koneksi.php"; : syntax salah
+dan 
+include("koneksi.php"); : benar
+include "koneksi.php";  : benar
+
+Rekomendasi: Gunakan require_once
+
+* require_once "koneksi.php"; *
+
+require vs. include: Jika file yang disertakan hilang, include 
+akan mengeluarkan peringatan (warning)
+dan melanjutkan eksekusi skrip, sedangkan require akan
+mengeluarkan kesalahan fatal (fatal error) dan menghentikan skrip. 
+Untuk koneksi database, kegagalan koneksi adalah fatal, jadi require lebih aman.
+
+_once: Memastikan file konfigurasi hanya disertakan satu kali 
+dalam satu permintaan halaman, mencegah kesalahan pendefinisian ulang variabel.
+
+
+// CARI KAN ARTI DARI SYNTAX QUERY INI 
+
+arti dari mysqli_.._..
+
+mysqli_query :
+
+mysqli_num_rows :
+
+mysqli_fetch_array :
+
+mysqli_close :
+
+
+
+
+// info sangat penting 
+
+jadi kalau muncul serchbar maka karna ini 
+
+DATATABLE ADALAH LIBRARY DARI JS
+
+Fungsi DataTable()
+.DataTable() adalah fungsi utama dari library DataTables. Ketika dipanggil pada sebuah tabel HTML,
+ fungsi ini akan secara otomatis menambahkan berbagai fitur interaktif tanpa Anda perlu menulis kode HTML/CSS tambahan, termasuk:
+
+Search Bar (Kolom Pencarian Global): Ini memungkinkan pengguna mencari data di seluruh kolom tabel.
+
+Pagination (Penomoran Halaman): Membagi data menjadi beberapa halaman (misalnya, 10 baris per halaman).
+
+Ordering/Sorting (Pengurutan): Mengizinkan pengguna mengurutkan data dengan mengklik header kolom.
+
+Filtering/Entries (Filter Jumlah Data): Kotak dropdown untuk memilih berapa banyak baris yang ingin ditampilkan (misalnya, Show 10, 25, 50 entries).
+
+Jadi, search bar dan fitur lainnya tidak muncul secara tiba-tiba, melainkan otomatis disuntikkan oleh library 
+JavaScript DataTables sebagai bagian dari fungsinya untuk mengubah tabel statis menjadi tabel interaktif yang canggih (enhanced table).
+
+
+
+// alesan kenapa data.php yang awalnya tidak ada css tiba tiba ada css
+// dan mungkin library menjadi alesan penting itu
+
+🚀 Proses AJAX: Pemberian Gaya Instan
+Ketika jQuery menyuntikkan (memasukkan) konten dari data.php ke dalam body index.php:
+
+Browser melihat elemen <button> yang baru masuk.
+
+Browser memeriksa atribut class elemen tersebut (btn btn-success btn-sm).
+
+Browser langsung mencari aturan yang cocok di memori (yang sudah dimuat dari file CSS Bootstrap di Langkah 1).
+
+Gaya tersebut langsung diterapkan pada tombol yang baru masuk.
+
+
+// lanjutan 
+
+Peran Sentral Library dalam Proyek Anda
+Dalam proyek CRUD (Create, Read, Update, Delete) Anda, ada tiga library utama yang saling mendukung:
+
+1. 🥇 JQuery (Library Dasar)
+Peran: JQuery adalah library JavaScript inti yang menyederhanakan manipulasi HTML (DOM), animasi, dan, yang paling penting bagi Anda, 
+membuat permintaan AJAX (.load()).
+
+Tanpa JQuery: Semua kode AJAX dan manipulasi elemen Anda akan jauh lebih panjang dan rumit.
+
+2. 💅 Bootstrap (Library Styling)
+Peran: Bootstrap adalah framework CSS/JS yang menyediakan tampilan dan nuansa (estetika) untuk antarmuka Anda. 
+Ia menyediakan gaya instan untuk tombol, formulir, navigasi, dan tata letak tabel.
+
+Tanpa Bootstrap: Tabel Anda akan terlihat kuno dan polos, dan Anda harus menulis semua CSS tata letak sendiri.
+
+3. 🧠 DataTables (Library Fungsionalitas Tabel)
+Peran: DataTables adalah library JavaScript spesialis yang mengubah tabel HTML statis menjadi alat data interaktif.
+Ia menyediakan "otak" untuk search bar, sorting, dan pagination.
+
+Tanpa DataTables: Anda harus menulis script kompleks untuk mengimplementasikan pagination dan fitur pencarian secara manual.
+
