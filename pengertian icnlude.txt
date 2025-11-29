@@ -1,0 +1,32 @@
+
+* menyertakan file dalan script utama *
+
+PHP menyediakan tiga pernyataan (statement) lain yang memiliki fungsi 
+serupa untuk menyertakan file eksternal ke dalam skrip utama
+
+// Pernyataan	Fungsi	Perbedaan Penting (Penanganan Error)
+
+include :	Menyertakan file.	Jika file tidak ditemukan, PHP mengeluarkan E_WARNING (peringatan) dan
+ skrip tetap melanjutkan eksekusi.
+
+require :	Menyertakan file.	Jika file tidak ditemukan, PHP mengeluarkan E_ERROR fatal dan 
+skrip langsung berhenti dieksekusi.
+
+include_once :	Sama seperti include.	Memeriksa apakah file sudah disertakan sebelumnya. Jika sudah, 
+tidak akan menyertakannya lagi. Menggunakan E_WARNING jika file tidak ditemukan.
+
+require_once :	Sama seperti require.	Memeriksa apakah file sudah disertakan sebelumnya. Jika sudah, 
+tidak akan menyertakannya lagi. Menggunakan E_ERROR jika file tidak ditemukan.
+
+/ Kapan menggunakan yang mana:
+
+Gunakan : require atau require_once : untuk file-file penting yang mutlak dibutuhkan agar aplikasi bisa berjalan (misalnya,
+file konfigurasi database atau definisi kelas/fungsi inti). Jika file ini hilang, aplikasi memang harus berhenti.
+
+Gunakan : include atau include_once : untuk file yang sifatnya opsional atau bagian tata letak (misalnya, widget samping, footer,
+atau konten dinamis yang jika gagal dimuat, halaman utama masih bisa ditampilkan).
+
+
+
+
+
