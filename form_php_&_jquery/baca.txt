@@ -1,0 +1,68 @@
+
+<!-- perbedaan antara isset dan empty -->
+
+isset(): mengecek apakah sebuah variabel sudah diset atau belum dan BUKAN NULL jika sudah diset
+maka akan mengembalikan nilai true, jika belum diset atau null maka akan mengembalikan nilai false
+
+not isset / !isset(): mengecek apakah sebuah variabel belum diset atau bernilai null, jika belum diset atau null
+maka akan mengembalikan nilai true, jika sudah diset dan bukan null maka akan mengembalikan nilai false
+
+isset menerima satu argumen yaitu variabel yang akan dicek apakah sudah diset atau belum. 
+isset mengembalikan nilai boolean (true atau false). isset juga dapat digunakan untuk mengecek
+apakah sebuah elemen array sudah diset atau belum dengan cara mengecek elemen array tersebut menggunakan sintaksis array.
+contoh: isset($array['key']) dan isset akan mengganp 0, 0.0, "0", "", FALSE, array() kosong, atau NULL sebagai nilai yang sudah diset.
+atau true karena variabel tersebut sudah ada dan bukan null.
+
+! : adalah operator logika yang berarti "tidak"
+
+dan 
+
+jadi empty adalah kebalikan dari isset dimana isset mengecek apakah variabel sudah diset dan bukan null,
+sedangkan empty mengecek apakah variabel bernilai "kosong" atau tidak diset.
+
+empty tidak menerima string kosong ("") , string "0", integer 0, float 0.0, NULL, FALSE, array() kosong, atau variabel yang belum diset
+sebagai nilai yang dianggap "kosong". jadi walaupun variabel sudah diset, jika nilainya termasuk dalam kategori diatas,
+maka empty akan mengembalikan nilai true.
+
+dan jika sebuah variabel sudah diset dan nilainya tidak termasuk dalam kategori diatas,
+maka empty akan mengembalikan nilai false.
+
+
+// empty(): mengecek apakah sebuah variabel bernilai "kosong".
+// Nilai yang dianggap kosong: "", "0", 0, 0.0, NULL, FALSE, array() kosong, atau variabel yang belum diset.
+// empty() mengembalikan true jika variabel kosong atau tidak diset.
+
+$b = "";
+$c = "0";
+$d = 0;
+$e = [];
+$f = null;
+$g = false;
+$h = "hello";
+
+// Contoh penggunaan dan perbedaan dengan isset()
+echo "isset(\$b): "; var_export(isset($b)); echo PHP_EOL;
+echo "empty(\$b): "; var_export(empty($b)); echo PHP_EOL;
+
+echo "isset(\$c): "; var_export(isset($c)); echo PHP_EOL;
+echo "empty(\$c): "; var_export(empty($c)); echo PHP_EOL;
+
+echo "isset(\$d): "; var_export(isset($d)); echo PHP_EOL;
+echo "empty(\$d): "; var_export(empty($d)); echo PHP_EOL;
+
+echo "isset(\$e): "; var_export(isset($e)); echo PHP_EOL;
+echo "empty(\$e): "; var_export(empty($e)); echo PHP_EOL;
+
+echo "isset(\$f): "; var_export(isset($f)); echo PHP_EOL;
+echo "empty(\$f): "; var_export(empty($f)); echo PHP_EOL;
+
+echo "isset(\$g): "; var_export(isset($g)); echo PHP_EOL;
+echo "empty(\$g): "; var_export(empty($g)); echo PHP_EOL;
+
+echo "isset(\$h): "; var_export(isset($h)); echo PHP_EOL;
+echo "empty(\$h): "; var_export(empty($h)); echo PHP_EOL;
+
+// Cara umum untuk memastikan variabel "ada dan tidak kosong"
+if (isset($h) && $h !== "") {
+    echo "\$h sudah diset dan bukan string kosong" . PHP_EOL;
+}
