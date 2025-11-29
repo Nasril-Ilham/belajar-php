@@ -1,0 +1,25 @@
+
+
+* di folder formupload&login_cokies_sesion *
+
+ini menyimpan dua hall
+
+1. membahas form untuk upload :  file dan gambar
+2. membahas login seperti username trs pasword 
+3. koneksi.php : menghubungkan dengan database sql
+4. penerapan cookies : formbeli.html contohnya
+
+Gunakan isset(): Selalu cek if (isset($_POST["..."])) 
+sebelum menggunakan variabel $_POST.
+
+
+ada 
+ $row = mysqli_fatc_assoc($result); : 
+
+ $cek = mysqli_num_rows($result); :
+
+
+
+ Jenis  ,Menyimpan Informasi  ,Lokasi Penyimpanan, Dapat dipanggil, Bersifat Global, Dapat dipanggil Lain Waktu, Dibatasi Browser, Dapat diedit User
+Cookies    ,Ya                      ,Client                ,Ya,             Ya,             Ya,                        Ya,                    Ya
+Session,  Ya                      ,Server               ,Ya,             Ya,               Tidak,                    Tidak,               Tidak

@@ -1,0 +1,43 @@
+dalam folder ini  berisi :
+
+1. form untuk upload file 
+2. jquery / ajax untuk mengambil dari form menggunakan id = upload_form
+3. php logic yang di kirim dari ajax ke php logic menggunakan :
+
+ $.ajax({
+            type: "POST",
+            url: "upload_ajax.php",
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            // 2. PERBAIKAN: Gunakan 'success' (dengan 's' ganda)
+            success: function(response){
+                $("#status").html(response);
+            },
+            error: function(){
+                $("#status").html("terjadi kesalahan saat mengungah file");
+            }
+        });
+
+code di atas akan mengarahkan ke php dan habis itu di kembalikan lagi ke 
+ajax dan habis itu di keluarkan pada div status pada bawah sendiri form
+
+peredaan id daN class
+
+id = biasanya di pake untuk memanggil logic 
+tujuan utama : Identifikasi tunggal, JavaScript, linking.
+Prioritas CSS : Sangat Tinggi
+
+class = untuk styling dengan css atau tailwind 
+tujuan utama : Styling (CSS), pengelompokan.
+Prioritas CSS : normal
+
+Aturan Emas
+
+Selalu gunakan class untuk styling dan grouping. Gunakan id hanya jika 
+Anda benar-benar perlu menandai elemen
+itu secara unik untuk diakses oleh JavaScript atau sebagai target link (fragment URL).
+
+? : kenapa pake ajax tidak langsung saja ke php logicnya dari pada menggunakan aja 
+    / jquery ?
