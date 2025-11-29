@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manipulasi</title>
+    <style>
+
+    .important {
+        font-weight: bold;
+        color: red;
+        font-size: xx-large;
+    }
+
+    .biru {
+        color: blue;
+    }
+
+    .merah {
+        background-color: red;
+        color: white;
+    }
+    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        
+
+        // ini mengakses css melalui jquery jadi kita perlu menulis ccs dulu
+        // lalu mengaksesnya melalui jquery
+
+        
+        $(document).ready(function(){
+ 
+            // menambahkan css dengan menambah class
+            $(".btn1").click(function(){
+                $("h1, h2, p").addClass("biru");
+                $("div").addClass("merah");
+            });
+            
+            // menghapus css dengan menghapus class
+            $(".btn2").click(function(){
+                $("h1, h2, p , div").removeClass("biru");
+                $("div").removeClass("merah");
+            });
+   
+            // toggle css dengan toggle class
+            $(".btn4").click(function(){
+                $("h1, h2, p , div").toggleClass("biru");
+            });
+
+            // menetapkan css dengan css langsungh
+            $(".btn3").click(function(){
+                // Menggunakan Objek untuk menetapkan beberapa properti: { properti: nilai, properti: nilai }
+                 $("h1, h2, p, div").css({
+                   "background-color": "yellow",
+                      "font-size": "30px",
+                        "width": "100%",
+                       "height": "30px"
+                         });
+            });
+
+            // removw css
+            $(".btn5").click(function(){
+                // Menggunakan Objek untuk menetapkan beberapa properti: { properti: nilai, properti: nilai }
+                 $("h1, h2, p, div").css({
+                   "background-color": "",
+                      "font-size": "",
+                        "width": "",
+                       "height": ""
+                         });
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <h1>heading 1</h1>
+    <h2>heading 2</h2>
+    <p>ini paragraf pertama </p>
+    <p>ini paragraf kedua</p>
+    <div>ini text yang sangat penting</div>
+    <br>
+    <button class="btn1">menambah class pada element</button>
+    <button class="btn2">menghapus class pada element</button>
+    <button class="btn3">set class pada element</button>
+    <button class="btn4">toggle class pada element</button>
+    <button class="btn5">remove set class pada element</button>
+
+</body>
+</html>

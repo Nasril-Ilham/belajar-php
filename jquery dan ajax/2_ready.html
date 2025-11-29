@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ready jquery</title>
+    
+    <!-- memanggil jquery -->
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+
+    <!-- script untuk logika jquery -->
+
+    <script>
+    
+    // menggunakan ready
+
+   $(document).ready(function(){
+    
+     $("#button").click(function(){
+        alert("ini adalah praktikum minggu ke-4");
+    });
+
+   });
+
+   // tidak menggunakan ready dan document langsung button
+  
+    $("#button1").click(function(){
+        alert("ini adalah praktikum minggu ke-4");
+    });
+
+
+    </script>
+
+</head>
+<body>
+    <input type="button" id="button" value="klik saya : ready">
+    <br>
+    <br>
+     <input type="button" id="button1" value="klik saya : !ready">
+</body>
+</html>

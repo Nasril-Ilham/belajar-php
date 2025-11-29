@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="jquery-3.7.1.min.js"></script>
+
+    <script>
+
+        // // dom get jquery untuk mengambil nilai text, html, value
+        // $(document).ready(function(){
+        //     // kode jquery disini
+    
+        //     // .text() mengambil teks dari elemen
+        //     $("#btn1").click(function(){
+        //         alert( $("#test1").text() );
+        //     });
+            
+        //     // .html() menampilkan html termasuk tag didalamnya
+        //     $("#btn2").click(function(){
+        //         alert( $("#test2").html() );
+        //     });
+
+        //     // .val() mengambil nilai value dari input/select/textarea
+        //     $("#btn3").click(function(){
+        //         alert( $("#test3").val() );
+        //     });
+
+        // });
+
+
+         // dom set jquery untuk mengubah nilai text, html, value
+                 $(document).ready(function(){
+            // kode jquery disini
+    
+            // .text() mengubah teks dari elemen
+            $("#btn1").click(function(){
+                                    //value yang diubah
+                 $("#test1").text("<b>hello word</b>") 
+            });
+            
+            // .html() mengubah html termasuk tag didalamnya
+            $("#btn2").click(function(){
+                 $("#test2").html("<b>hello word</b>") 
+            });
+
+            // .val() mengubah nilai value dari input/select/textarea
+            $("#btn3").click(function(){
+                 $("#test3").val("unira malang") 
+            });
+
+        });
+
+        // dom 
+
+    </script>
+</head>
+<body>
+ 
+    <!-- untuk mengambil nilai text, html, dan value -->
+    <p id="test1">ini adalah paragraf pertama</p>
+
+    <p id="test2">ini adalah <b>paragraf </b> kedua</p>
+
+    <p>your name<input type="text" name="text" id="test3"></p>
+    
+    <!-- tombol untuk mengambil nilai text, html, dan value -->
+    <button id="btn1">get text</button> 
+
+    <button id="btn2">get html</button>
+
+    <button id="btn3">get value</button>
+</body>
+</html>

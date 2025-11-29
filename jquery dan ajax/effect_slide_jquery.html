@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide efffect</title>
+
+    <style>
+        #kotak, #flip{
+            padding: 5px;
+            text-align: center;
+            background-color: #a7dbd8;
+            border: 3px solid black;
+            border-radius: 5px;
+        }
+
+        #kotak{
+            padding: 50px;
+            margin-top: 20px;
+        }
+    </style>
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+   
+
+   $(document).ready(function(){
+
+     //untuk naik
+
+    $("#flip").click(function(){
+
+         $("#kotak1").slideUp("slow");
+    });
+
+    // untuk turun
+
+       $("#flip").click(function(){
+
+         $("#kotak2").slideDown("slow");
+    });
+
+    // untuk animasi
+ 
+         $("#flip").click(function(){
+
+         $("#kotak3").slideToggle("slow");
+    });
+
+
+   });
+
+    </script>
+</head>
+<body>
+    <div id="flip">klik untuk efek slide</div>
+    <div id="kotak1">selamat pagi</div> // untuk yang up
+
+    <div id="kotak2" style="display: none;">selamat pagi</div> // untuk yang down
+
+    <div id="kotak3" style="display: none;">selamat pagi</div> 
+
+</body>
+</html>

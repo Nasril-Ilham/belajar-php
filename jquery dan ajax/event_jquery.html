@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event jquery</title>
+    
+
+    <style>
+    #paragraf { /* ✅ BENAR: Menggunakan kurung kurawal */
+        width: 600px;
+        height: 80px;
+        background-color: pink; /* ✅ BENAR: background-color */
+        line-height: 80px;
+        text-align: center;
+        font-size: 30px; /* ✅ BENAR: Satu titik dua */
+    }
+    </style>
+
+<script src="jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        
+        // click
+        $("#paragraf").click(function(){
+            $("#paragraf").css("color", "white");
+        });
+
+         // mouseover
+        $("#paragraf").mouseover(function(){
+            $("#paragraf").css("background-color", "blue");
+        });
+
+         // mouseout
+        $("#paragraf").mouseout(function(){
+            $("#paragraf").css("background-color", "silver");
+        });
+
+         // dblclick 
+        $("#paragraf").dblclick(function(){
+            $("#paragraf").css("border", "solid 3px black");
+        });
+
+
+    });
+    </script>
+    
+</head>
+<body>
+    <p id="paragraf">peraktikum minggu ke - 4</p>
+</body>
+</html>

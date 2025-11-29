@@ -1,0 +1,47 @@
+1. Manipulasi Atribut dan Properti (Get & Set)
+Metode ini digunakan untuk membaca atau mengubah atribut dan properti elemen HTML:
+attr(): Mengambil atau menetapkan nilai atribut (misalnya href, src, id).
+prop(): Mengambil atau menetapkan nilai properti (misalnya checked, disabled).
+val(): Mengambil atau menetapkan nilai elemen formulir (misalnya input, select, textarea).
+css(): Mengambil atau menetapkan properti gaya CSS.
+addClass(), removeClass(), toggleClass(): Menambah, menghapus, atau mengalihkan kelas CSS.
+hasClass(): Memeriksa keberadaan kelas.
+
+2. Manipulasi Konten (Get & Set)
+Metode ini digunakan untuk membaca atau mengubah konten di dalam elemen:
+html(): Mengambil atau menetapkan konten HTML (termasuk tag HTML di dalamnya).
+text(): Mengambil atau menetapkan konten teks murni (menghilangkan tag HTML).
+
+3. Manipulasi Struktur DOM (Penambahan & Penghapusan)
+Metode ini digunakan untuk menambah, memindahkan, atau menghapus elemen dari struktur DOM:
+append(): Menambahkan konten di akhir elemen yang dipilih.
+prepend(): Menambahkan konten di awal elemen yang dipilih.
+after(): Menambahkan konten setelah elemen yang dipilih.
+before(): Menambahkan konten sebelum elemen yang dipilih.
+remove(): Menghapus elemen yang dipilih (dan turunannya).
+empty(): Menghapus konten di dalam elemen yang dipilih, tetapi membiarkan elemen induk tetap ada.
+clone(): Membuat salinan dari elemen yang dipilih.
+wrap(), unwrap(), replaceWith(): Mengubah struktur pembungkus elemen.
+
+4. Penelusuran (Traversal) DOM
+Metode ini digunakan untuk menavigasi struktur pohon DOM dan menemukan elemen lain berdasarkan hubungannya dengan elemen saat ini:
+find(): Mencari elemen turunan yang cocok dengan selektor tertentu.
+children(): Mengambil semua elemen anak langsung.
+parent(): Mengambil elemen induk langsung.
+parents(): Mengambil semua elemen induk hingga ke akar DOM.
+siblings(): Mengambil semua elemen saudara (siblings).
+closest(): Mencari elemen induk terdekat yang cocok dengan selektor.
+first(), last(), eq(): Memilih elemen pertama, terakhir, atau pada indeks tertentu dari satu set elemen.
+filter(): Membatasi set elemen yang cocok dengan kriteria tertentu.
+
+5. Penanganan Event (Events)
+Metode ini digunakan untuk melampirkan fungsi (event handler) ke elemen untuk merespons interaksi pengguna atau kejadian browser:
+on(): Metode utama untuk melampirkan satu atau beberapa event handler.
+click(), hover(), submit(), change(), keypress(): Metode pintasan untuk event umum.
+off(): Melepaskan event handler yang sebelumnya dilampirkan.
+
+6. Animasi dan Efek
+Meskipun berkaitan dengan tampilan, ini sering digunakan bersama manipulasi DOM untuk pengalaman pengguna yang dinamis:
+hide(), show(), toggle(): Menyembunyikan, menampilkan, atau mengalihkan visibilitas elemen.
+fadeIn(), fadeOut(), slideUp(), slideDown(): Efek transisi dengan animasi.
+animate(): Metode kustom untuk menganimasikan properti CSS.
